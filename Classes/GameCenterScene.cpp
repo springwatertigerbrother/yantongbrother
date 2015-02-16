@@ -58,8 +58,18 @@ CCScene* GameCenter::scene()
     // return the scene
     return scene;
 }
-
-// on "init" you need to initialize your instance
+//void GameCenter::onEnter()
+//{
+//    auto listener = EventListenerTouchAllAtOnce::create();
+//    listener->onTouchesBegan = CC_CALLBACK_2(GameCenter::onTouchesBegan, this);
+//    listener->onTouchesMoved = CC_CALLBACK_2(GameCenter::onTouchesMoved, this);
+//    listener->onTouchesEnded = CC_CALLBACK_2(GameCenter::onTouchesEnded, this);
+//    
+//    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+//    
+//
+//
+//}
 bool GameCenter::init()
 {
     //////////////////////////////
@@ -68,6 +78,15 @@ bool GameCenter::init()
     {
         return false;
     }
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(_swallowsTouches);
+    
+    listener->onTouchBegan = CC_CALLBACK_2(Layer::onTouchBegan, this);
+    listener->onTouchMoved = CC_CALLBACK_2(Layer::onTouchMoved, this);
+    listener->onTouchEnded = CC_CALLBACK_2(Layer::onTouchEnded, this);
+    listener->onTouchCancelled = CC_CALLBACK_2(Layer::onTouchCancelled, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+
     
     CCSprite* pBgSprite = CCSprite::create("images/bg2.png");
     CCSize s = CCDirector::sharedDirector()->getWinSize();
@@ -84,6 +103,7 @@ bool GameCenter::init()
     pStarLayer->setPosition(CCPointZero);
     addChild(pStarLayer,GameStartLayer_enum);
     StartGame();
+    
     return true;
 }
 

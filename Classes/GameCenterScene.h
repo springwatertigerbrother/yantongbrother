@@ -56,7 +56,7 @@ public:
 //    virtual void registerWithTouchDispatcher();
 //    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     virtual bool onTouchBegan(Touch *touch, Event *unused_event);
-
+//    virtual void onEnter() override;
     void ChangeSpeed();
 
     void RemoveSelfAfterAction(CCNode* pSender);

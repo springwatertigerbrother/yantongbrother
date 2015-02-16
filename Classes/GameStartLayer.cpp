@@ -9,12 +9,31 @@
 #include "GameStartLayer.h"
 USING_NS_CC;
 
+//void GameStartLayer::onEnter()
+//{
+//        auto listener = EventListenerTouchAllAtOnce::create();
+//        listener->onTouchesBegan = CC_CALLBACK_2(GameStartLayer::onTouchesBegan, this);
+//        listener->onTouchesMoved = CC_CALLBACK_2(GameStartLayer::onTouchesMoved, this);
+//        listener->onTouchesEnded = CC_CALLBACK_2(GameStartLayer::onTouchesEnded, this);
+//    
+//        _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+//    
+//}
+
 bool GameStartLayer::init()
 {
     if ( !CCLayerColor::initWithColor(ccc4(200, 100, 100, 200)))
     {
         return false;
     }
+    
+    auto listener = EventListenerTouchAllAtOnce::create();
+    listener->onTouchesBegan = CC_CALLBACK_2(GameStartLayer::onTouchesBegan, this);
+    listener->onTouchesMoved = CC_CALLBACK_2(GameStartLayer::onTouchesMoved, this);
+    listener->onTouchesEnded = CC_CALLBACK_2(GameStartLayer::onTouchesEnded, this);
+    
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
     setTouchEnabled(true);
     //    setTouchEnabled(true);
     CCSize s = CCDirector::sharedDirector()->getWinSize();
