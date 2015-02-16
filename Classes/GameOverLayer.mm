@@ -9,8 +9,8 @@
 #include "GameOverLayer.h"
 #include "GameCenterScene.h"
 #include "DataHome.h"
-#include "AdScenesDemo.h"
-#include "AdViewToolX.h"
+//#include "AdScenesDemo.h"
+//#include "AdViewToolX.h"
 #include "IADSimple.h"
 
 //GameOverLayer::GameOverLayer()
@@ -40,8 +40,8 @@ bool GameOverLayer::init()
     pBg->setOpacity(200);
     addChild(pBg);
     
-    CCMenuItemImage* pItem1 = CCMenuItemImage::create("images/restartn.png", "images/restartp.png", this, menu_selector(GameOverLayer::ReStartGame)) ;
-    CCMenuItemImage* pItem2 = CCMenuItemImage::create("images/start2normal.png", "images/start2press.png", this, menu_selector(GameOverLayer::ExitGame)) ;
+    MenuItemImage* pItem1 = MenuItemImage::create("images/restartn.png", "images/restartp.png", CC_CALLBACK_0(GameOverLayer::ReStartGame,this)) ;
+    MenuItemImage* pItem2 = MenuItemImage::create("images/start2normal.png", "images/start2press.png",CC_CALLBACK_0(GameOverLayer::ExitGame,this)) ;
     //    pItem2->setFontSize(180);
 //    CCMenu* pMenu2 = CCMenu::create(pItem2,NULL);
 //    pItem2->setPosition(ccp(s.width/2, s.height/5));
@@ -108,8 +108,8 @@ bool GameOverLayer::init()
 //    pHightestLbl->setPosition(ccp(s.width/2,s.height*0.5));
 //    addChild(pHightestLbl);
 
-    AdViewToolX::setAdHidden(false);
-    AdViewToolX::setAdPosition(AdViewToolX::AD_POS_CENTER, AdViewToolX::AD_POS_BOTTOM);
+//    AdViewToolX::setAdHidden(false);
+//    AdViewToolX::setAdPosition(AdViewToolX::AD_POS_CENTER, AdViewToolX::AD_POS_BOTTOM);
     
     IADSimple* simple = [IADSimple IADSimple];
     [simple.bannerView setHidden:false];
@@ -122,7 +122,7 @@ bool GameOverLayer::init()
 
 void GameOverLayer::ReStartGame()
 {
-    AdViewToolX::setAdHidden(true);
+//    AdViewToolX::setAdHidden(true);
     IADSimple* simple = [IADSimple IADSimple];
     [simple.bannerView setHidden:false];
     

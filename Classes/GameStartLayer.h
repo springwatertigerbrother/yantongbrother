@@ -21,9 +21,9 @@ public:
     void StartGame();
     void ReMoveAdvertisement();
     void EnterGameCenter();
-    
-    virtual void registerWithTouchDispatcher();
-    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    virtual bool onTouchBegan(Touch *touch, Event *unused_event);
+
+//    virtual void registerWithTouchDispatcher();
 };
 
 #endif /* defined(__niweishenmezhemediao__GameStartLayer__) */

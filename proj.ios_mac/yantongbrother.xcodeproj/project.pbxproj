@@ -76,6 +76,8 @@
 		FE63ECD01A91D93000617890 /* IADSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63ECC41A91D93000617890 /* IADSimple.m */; };
 		FE63ECD11A91D93000617890 /* tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE63ECC51A91D93000617890 /* tree.cpp */; };
 		FE63ECD21A91D93000617890 /* tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE63ECC51A91D93000617890 /* tree.cpp */; };
+		FE63ECD51A91DD4400617890 /* ManCopy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE63ECD41A91DD4400617890 /* ManCopy.cpp */; };
+		FE63ECD61A91DD4400617890 /* ManCopy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE63ECD41A91DD4400617890 /* ManCopy.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +181,8 @@
 		FE63ECC41A91D93000617890 /* IADSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IADSimple.m; sourceTree = "<group>"; };
 		FE63ECC51A91D93000617890 /* tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tree.cpp; sourceTree = "<group>"; };
 		FE63ECC61A91D93000617890 /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
+		FE63ECD31A91DD4400617890 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		FE63ECD41A91DD4400617890 /* ManCopy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ManCopy.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +327,8 @@
 				FE63ECC41A91D93000617890 /* IADSimple.m */,
 				FE63ECC51A91D93000617890 /* tree.cpp */,
 				FE63ECC61A91D93000617890 /* tree.h */,
+				FE63ECD31A91DD4400617890 /* Man.h */,
+				FE63ECD41A91DD4400617890 /* ManCopy.cpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -530,6 +536,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				FE63ECC91A91D93000617890 /* GameCenterScene.cpp in Sources */,
+				FE63ECD51A91DD4400617890 /* ManCopy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +549,7 @@
 				FE63ECD21A91D93000617890 /* tree.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				FE63ECCA1A91D93000617890 /* GameCenterScene.cpp in Sources */,
+				FE63ECD61A91DD4400617890 /* ManCopy.cpp in Sources */,
 				FE63ECCE1A91D93000617890 /* GameStartLayer.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				FE63ECD01A91D93000617890 /* IADSimple.m in Sources */,

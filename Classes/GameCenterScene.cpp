@@ -87,12 +87,12 @@ bool GameCenter::init()
     return true;
 }
 
-void GameCenter::registerWithTouchDispatcher()
-{
-    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, -128, false);
-}
+//void GameCenter::registerWithTouchDispatcher()
+//{
+//    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, -128, false);
+//}
 
-bool GameCenter::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+bool GameCenter::onTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     
     CCPoint touchLocation = pTouch->getLocation();
@@ -343,11 +343,11 @@ void GameCenter::update(float dt)
 void GameCenter::StopMoveTrees()
 {
     m_b_crazy = false;
-    unschedule(schedule_selector(GameCenter::MoveTrees));
+    unschedule(CC_SCHEDULE_SELECTOR(GameCenter::MoveTrees));
 }
 void GameCenter::StartMoveTrees()
 {
-    schedule(schedule_selector(GameCenter::MoveTrees), CRAZY_SPEED);
+    schedule(CC_SCHEDULE_SELECTOR(GameCenter::MoveTrees), CRAZY_SPEED);
 }
 void GameCenter::BeforeCrazyAnimation()
 {
@@ -416,7 +416,7 @@ void GameCenter::RemoveSelfAfterAction(CCNode* pSender)
        pSender->removeFromParentAndCleanup(true);
     }
 }
-void GameCenter::MoveTrees()
+void GameCenter::MoveTrees(float delta)
 {
 //    if (m_b_crazy)
 //    {

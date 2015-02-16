@@ -51,10 +51,12 @@ public:
     void ChangeTrees();
     void PlayCutTreeAnimationWithType();
     void RemoveAllTrees();
-    void MoveTrees();
+    void MoveTrees(float delta);
     void GameOver();
-    virtual void registerWithTouchDispatcher();
-    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+//    virtual void registerWithTouchDispatcher();
+//    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    virtual bool onTouchBegan(Touch *touch, Event *unused_event);
+
     void ChangeSpeed();
 
     void RemoveSelfAfterAction(CCNode* pSender);

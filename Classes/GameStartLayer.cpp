@@ -7,6 +7,7 @@
 //
 
 #include "GameStartLayer.h"
+USING_NS_CC;
 
 bool GameStartLayer::init()
 {
@@ -60,14 +61,15 @@ bool GameStartLayer::init()
     plblDiscription->setHorizontalAlignment(kCCTextAlignmentCenter);
     plblDiscription->setString(disStr.c_str());
     plblDiscription->setPosition(ccp(contentSize.width/2,contentSize.height*0.3));
-    plblDiscription->setDimensions(ccp(contentSize.width*0.8, 100));
+//    plblDiscription->setDimensions((contentSize.width*0.8, 100.0f));
     plblDiscription->setColor(ccRED);
     pBg->addChild(plblDiscription);
 //    pGameoverLblBM->setHorizontalAlignment(kCCTextAlignmentCenter);
     pBg->addChild(pGameoverLblBM);
     
 //    CCMenuItemFont* pItem2 = CCMenuItemFont::create("start",this,menu_selector(GameStartLayer::StartGame));
-    CCMenuItemImage* pItem2 = CCMenuItemImage::create("images/start2normal.png", "images/start2press.png", this, menu_selector(GameStartLayer::StartGame)) ;
+    MenuItemImage* pItem2 = MenuItemImage::create("images/start2normal.png", "images/start2press.png", CC_CALLBACK_0(GameStartLayer::StartGame, this)) ;
+    
 //    pItem2->setFontSize(180);
     CCMenu* pMenu2 = CCMenu::create(pItem2,NULL);
     pItem2->setPosition(ccp(s.width/2, s.height/5));
@@ -87,12 +89,12 @@ void GameStartLayer::StartGame()
     CCSize s = CCDirector::sharedDirector()->getWinSize();
     this->runAction(CCMoveTo::create(0.2, ccp(0,s.height)));
 }
-void GameStartLayer::registerWithTouchDispatcher()
-{
-    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, -128, true);
-}
+//void GameStartLayer::registerWithTouchDispatcher()
+//{
+//    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, -128, true);
+//}
 
-bool GameStartLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+bool GameStartLayer::onTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCLog("gamestartlayer");
     setTouchEnabled(false);
