@@ -1,5 +1,7 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "cocos2d.h"
+#include "SimpleAudioEngine.h"
+#include "GameCenterScene.h"
 
 USING_NS_CC;
 
@@ -38,10 +40,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto *pScene = GameCenter::scene();
 
     // run
-    director->runWithScene(scene);
+    director->runWithScene(pScene);
 
     return true;
 }
