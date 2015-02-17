@@ -22,6 +22,9 @@ public:
     void ReMoveAdvertisement();
     void EnterGameCenter();
     virtual bool onTouchBegan(Touch *touch, Event *unused_event);
+    
+    EventListenerTouchOneByOne *listener ;
+
 //    virtual void onEnter() override;
 
 //    virtual void registerWithTouchDispatcher();

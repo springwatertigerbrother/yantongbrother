@@ -122,12 +122,14 @@ bool GameOverLayer::init()
 
 void GameOverLayer::ReStartGame()
 {
+    
 //    AdViewToolX::setAdHidden(true);
     IADSimple* simple = [IADSimple IADSimple];
     [simple.bannerView setHidden:false];
     
     if (this->getParent())
     {
+        ((GameCenter*)(this->getParent()))->listener->setSwallowTouches(true);
         CCSize s = CCDirector::sharedDirector()->getWinSize();
         this->runAction(CCMoveTo::create(0.2, ccp(0,s.height)));
 

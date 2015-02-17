@@ -26,11 +26,12 @@ bool GameStartLayer::init()
     {
         return false;
     }
-    
-    auto listener = EventListenerTouchAllAtOnce::create();
-    listener->onTouchesBegan = CC_CALLBACK_2(GameStartLayer::onTouchesBegan, this);
-    listener->onTouchesMoved = CC_CALLBACK_2(GameStartLayer::onTouchesMoved, this);
-    listener->onTouchesEnded = CC_CALLBACK_2(GameStartLayer::onTouchesEnded, this);
+    listener = EventListenerTouchOneByOne::create();
+
+    listener->onTouchBegan = CC_CALLBACK_2(GameStartLayer::onTouchBegan, this);
+    listener->setSwallowTouches(true);
+//    listener->onTouchesMoved = CC_CALLBACK_2(GameStartLayer::onTouchesMoved, this);
+//    listener->onTouchesEnded = CC_CALLBACK_2(GameStartLayer::onTouchesEnded, this);
     
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
@@ -105,6 +106,7 @@ void GameStartLayer::ReMoveAdvertisement()
 }
 void GameStartLayer::StartGame()
 {
+    listener->setSwallowTouches(false);
     CCSize s = CCDirector::sharedDirector()->getWinSize();
     this->runAction(CCMoveTo::create(0.2, ccp(0,s.height)));
 }
@@ -116,6 +118,6 @@ void GameStartLayer::StartGame()
 bool GameStartLayer::onTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCLog("gamestartlayer");
-    setTouchEnabled(false);
+//    setTouchEnabled(false);
     return true;
 }

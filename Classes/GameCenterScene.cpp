@@ -78,7 +78,7 @@ bool GameCenter::init()
     {
         return false;
     }
-    auto listener = EventListenerTouchOneByOne::create();
+    listener = EventListenerTouchOneByOne::create();
     listener->setSwallowTouches(_swallowsTouches);
     
     listener->onTouchBegan = CC_CALLBACK_2(Layer::onTouchBegan, this);
@@ -86,7 +86,7 @@ bool GameCenter::init()
     listener->onTouchEnded = CC_CALLBACK_2(Layer::onTouchEnded, this);
     listener->onTouchCancelled = CC_CALLBACK_2(Layer::onTouchCancelled, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-
+    
     
     CCSprite* pBgSprite = CCSprite::create("images/bg2.png");
     CCSize s = CCDirector::sharedDirector()->getWinSize();
@@ -296,8 +296,10 @@ void GameCenter::RemoveAllTrees()
 }
 void GameCenter::GameOver()
 {
+//    listener->setSwallowTouches(false);
+//    _eventDispatcher->setEnabled(false);
     DataHome::getInstance()->wScore = m_i_score;
-    
+
     setTouchEnabled(false);
     bPlaying = false;
     unscheduleUpdate();
@@ -310,6 +312,9 @@ void GameCenter::GameOver()
     pGameOverLayer->setPosition(ccp(0,s.height));
     pGameOverLayer->runAction(CCMoveTo::create(0.5,CCPointZero));
     addChild(pGameOverLayer,GameOverLayer_enum);
+    
+    listener->onTouchBegan  = nullptr;
+
     CCLog("gameover");
 }
 void GameCenter::update(float dt)
@@ -482,7 +487,7 @@ void GameCenter::StartGame()
     
     InitTrees();
     InitMan();
-    setTouchEnabled(true);
+    listener->onTouchBegan  = CC_CALLBACK_2(Layer::onTouchBegan, this);
     unscheduleUpdate();
     scheduleUpdate();
 

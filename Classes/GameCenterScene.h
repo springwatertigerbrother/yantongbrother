@@ -74,6 +74,7 @@ public:
     void BeforeCrazyAnimation();
     void BackToNormal();
     
+    EventListenerTouchOneByOne* listener;
 };
 
 #endif // __GameCenter_SCENE_H__
