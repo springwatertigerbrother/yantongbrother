@@ -103,6 +103,7 @@
 		FE63ED0F1A9221F400617890 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE63ED061A9221F400617890 /* Icon.png */; };
 		FE63ED101A9221F400617890 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE63ED071A9221F400617890 /* Icon@2x.png */; };
 		FE63ED111A9221F400617890 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE63ED071A9221F400617890 /* Icon@2x.png */; };
+		FEAEEBA31A93D60C001905E8 /* MUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEAEEBA11A93D60C001905E8 /* MUtils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,8 @@
 		FE63ED051A9221F400617890 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		FE63ED061A9221F400617890 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		FE63ED071A9221F400617890 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		FEAEEBA11A93D60C001905E8 /* MUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MUtils.cpp; sourceTree = "<group>"; };
+		FEAEEBA21A93D60C001905E8 /* MUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +358,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FEAEEB9F1A93D490001905E8 /* lib */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -421,6 +425,15 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		FEAEEB9F1A93D490001905E8 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				FEAEEBA11A93D60C001905E8 /* MUtils.cpp */,
+				FEAEEBA21A93D60C001905E8 /* MUtils.h */,
+			);
+			name = lib;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -598,6 +611,7 @@
 				FE63ECC71A91D93000617890 /* DataHome.cpp in Sources */,
 				FE63ECCB1A91D93000617890 /* GameOverLayer.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				FEAEEBA31A93D60C001905E8 /* MUtils.cpp in Sources */,
 				FE63ECD11A91D93000617890 /* tree.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,

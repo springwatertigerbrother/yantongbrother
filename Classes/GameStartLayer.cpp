@@ -63,7 +63,7 @@ bool GameStartLayer::init()
     }
 
 //    CCLabelTTF* pGameoverLbl = CCLabelTTF::create("destroy the pipestem", "ArialRoundedMTBold", 40,CCSizeMake(300, 200),kCCTextAlignmentCenter);
-    CCSize contentSize = pBg->getContentSize();
+    Size contentSize = pBg->getContentSize();
     pGameoverLblBM->setPosition(ccp(contentSize.width/2,contentSize.height*0.75));
     pGameoverLblBM->setScale(1.5);
     pGameoverLblBM->setAlignment(kCCTextAlignmentCenter);
@@ -81,7 +81,7 @@ bool GameStartLayer::init()
     plblDiscription->setHorizontalAlignment(kCCTextAlignmentCenter);
     plblDiscription->setString(disStr.c_str());
     plblDiscription->setPosition(ccp(contentSize.width/2,contentSize.height*0.3));
-//    plblDiscription->setDimensions((contentSize.width*0.8, 100.0f));
+    plblDiscription->setDimensions(Size(contentSize.width*0.8,contentSize.height*0.3));
     plblDiscription->setColor(ccRED);
     pBg->addChild(plblDiscription);
 //    pGameoverLblBM->setHorizontalAlignment(kCCTextAlignmentCenter);
