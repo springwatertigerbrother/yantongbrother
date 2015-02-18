@@ -2,6 +2,7 @@
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
 #include "GameCenterScene.h"
+#include "MUtils.h"
 
 USING_NS_CC;
 
@@ -26,6 +27,9 @@ void AppDelegate::initGLContextAttrs()
 
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
+
+    initialize_resolution();
+
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
