@@ -1239,7 +1239,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
-				INFOPLIST_FILE = "yantongbrother iOS copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios/free_ads-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1281,7 +1281,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
-				INFOPLIST_FILE = "yantongbrother iOS copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios/free_ads-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
